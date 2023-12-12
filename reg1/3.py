@@ -8,10 +8,11 @@ import re
 
 ip_address = input("Введите IP-адрес: ")
 
-pattern = r'\d\d\d\.\d\d\d\.\d\d\.\d\d'
+# pattern = r'\d\d\d\.\d\d\d\.\d\d\.\d\d'
+pattern = r'(\d{1,3}[\.]){3}\d{1,3}'
 
-a = re.findall(pattern, ip_address)
-if len(a) > 0:
+# a = re.match(pattern, ip_address)
+if re.match(pattern, ip_address):
     print("IP-адрес корректный")
 else:
     print("IP-адрес некорректный")

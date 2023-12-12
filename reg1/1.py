@@ -9,11 +9,11 @@ import re
 # phone_number = '+375295429299, +375291111213, 12345678'
 phone_number = input("Введите номер телефона: ")
 
-pattern = r'\+?\d\d\d\d\d\d\d\d\d\d\d\d'
+pattern = r'\+?\d{1,12}'
 
-a = re.findall(pattern, phone_number)
-print(a)
-if len(a) > 0:
+# a = re.findall(pattern, phone_number)
+# print(a)
+if re.match(pattern, phone_number):
     print("Номер телефона корректный")
 else:
     print("Номер телефона некорректный")
